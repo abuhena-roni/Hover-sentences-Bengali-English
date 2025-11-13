@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ENGLISH | PRACTICE — Hover sentences Bengali-English</title>
+
+  <style>
+    /* Basic page layout */
+    :root{
+      --bg: #0f172a;
+      --card: #0b1220;
+      --accent: #7dd3fc;
+      --muted: #94a3b8;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg,var(--bg), #071020 120%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:920px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.7);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    header a.logo{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(90deg, rgba(125,211,252,0.12), rgba(125,211,252,0.06));
+      color:var(--accent);
+      font-weight:700;
+      font-size:14px;
+    }
+    header h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:0.2px;
+    }
+    header p{
+      margin:0 0 0 auto;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Sentence list */
+    .sentences{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius:12px;
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.02);
+      transition: transform .18s ease, box-shadow .18s ease;
+      cursor:default;
+      min-height:86px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(2,6,23,0.6);
+    }
+
+    /* English text (visible by default) */
+    .en{
+      font-size:16px;
+      line-height:1.35;
+      color:#e6eef8;
+      margin:0 0 6px 0;
+      font-weight:600;
+    }
+    /* Bengali translation (hidden, revealed on hover) */
+    .bn{
+      font-size:15px;
+      line-height:1.35;
+      color:var(--muted);
+      transform: translateY(6px);
+      opacity:0;
+      transition: transform .18s ease, opacity .18s ease;
+      pointer-events:none;
+    }
+
+    /* Reveal on hover or focus (keyboard accessible) */
+    .card:hover .bn,
+    .card:focus-within .bn,
+    .card[data-open="true"] .bn { /* data-open helps for touch devices if you add JS later */
+      transform: translateY(0);
+      opacity:1;
+      color:#cfefff;
+    }
+
+    /* small label */
+    .label{
+      position:absolute;
+      top:10px;
+      right:10px;
+      font-size:12px;
+      color:var(--muted);
+      background:var(--glass);
+      padding:6px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* Make touch friendly: show bn when card is tapped (no JS: use :active fallback) */
+    .card:active .bn{ transform: translateY(0); opacity:1; }
+
+    /* Footer / instructions */
+    .notes{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width:420px){
+      body{padding:18px}
+      header h1{font-size:18px}
+      .en{font-size:15px}
+      .bn{font-size:14px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="logo" href="https://abuhena-roni.github.io/English_Practice/Hover-sentences-Bengali-English/" target="_blank" rel="noopener">Hover sentences</a>
+      <div>
+        <h1>Hover sentences — Bengali ↔ English</h1>
+        <p>Hover a card (or tap on mobile) to reveal the translation.</p>
+      </div>
+      <p style="margin-left:auto">ENGLISH | PRACTICE</p>
+    </header>
+
+    <div class="sentences">
+      <div class="card" tabindex="0">
+        <div class="label">1</div>
+        <p class="en">My name is Roni.</p>
+        <p class="bn">আমার নাম রনি।</p>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="label">2</div>
+        <p class="en">I am a student.</p>
+        <p class="bn">আমি একজন ছাত্র।</p>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="label">3</div>
+        <p class="en">I like to learn web development.</p>
+        <p class="bn">আমি ওয়েব ডেভেলপমেন্ট শিখতে পছন্দ করি।</p>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="label">4</div>
+        <p class="en">Can you help me with this exercise?</p>
+        <p class="bn">আপনি কি আমাকে এই অনুশীলনে সাহায্য করতে পারেন?</p>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="label">5</div>
+        <p class="en">I will practice every day.</p>
+        <p class="bn">আমি প্রতিদিন অনুশীলন করব।</p>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="label">6</div>
+        <p class="en">This is a helpful website for learners.</p>
+        <p class="bn">এই ওয়েবসাইটটি শিক্ষার্থীদের জন্য সাহায্যকারী।</p>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="label">7</div>
+        <p class="en">Please read the sentence and repeat it aloud.</p>
+        <p class="bn">অনুগ্রহ করে বাক্যটি পড়ুন এবং উচ্চস্বরে পুনরাবৃত্তি করুন।</p>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="label">8</div>
+        <p class="en">I am learning to code on my phone.</p>
+        <p class="bn">আমি আমার ফোনে কোড লিখতে শিখছি।</p>
+      </div>
+
+      <div class="card" tabindex="0">
+        <div class="label">9</div>
+        <p class="en">Thank you for your help.</p>
+        <p class="bn">আপনার সাহায্যের জন্য ধন্যবাদ।</p>
+      </div>
+    </div>
+
+    <div class="notes">
+      Tip: You can change the sentences by editing the `.en` and `.bn` blocks. Add `tabindex="0"` to cards for keyboard access. If you want tap-to-toggle behavior on mobile, I can add a small JavaScript snippet to toggle `data-open="true"` when you tap.
+    </div>
+  </div>
+</body>
+</html>
