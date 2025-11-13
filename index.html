@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENGLISH | PRACTICE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENGLISH | PRACTICE</title>
+
+  <style>
+    /* === Base Setup === */
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    /* === Link Style === */
+    h1 a {
+      text-decoration: none;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 12px 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    /* === Hover Effects === */
+    h1 a:hover {
+      background: #38bdf8;
+      color: #0f172a;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.35);
+    }
+
+    /* === Optional: small animation === */
+    h1 a:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(56, 189, 248, 0.2);
+    }
+
+    /* === Responsive === */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+      h1 a {
+        padding: 10px 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1><a href="https://abuhena-roni.github.io/English_Practice/Hover-sentences-Bengali-English/">Hover sentences Bengali-English 01 (I)</a></h1>
-    <h1><a href="https://abuhena-roni.github.io/English_Practice/Hover-sentences-Bengali-English-02/">Hover sentences Bengali-English 02 (I)</a></h1>
+  <h1>
+    <a href="https://abuhena-roni.github.io/English_Practice/Hover-sentences-Bengali-English/">
+      Hover sentences Bengali-English 01 (I)
+    </a>
+  </h1>
+
+  <h1>
+    <a href="https://abuhena-roni.github.io/English_Practice/Hover-sentences-Bengali-English-02/">
+      Hover sentences Bengali-English 02 (I)
+    </a>
+  </h1>
 </body>
 </html>
