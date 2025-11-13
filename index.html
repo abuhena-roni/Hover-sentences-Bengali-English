@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hover to Enlarge — Bengali sentences with English</title>
+  <style>
+    :root{
+      --bg:#0f172a; --card:#0b1220; --accent:#60a5fa; --text:#e6eef8;
+    }
+    body{font-family: 'Noto Sans Bengali', system-ui, sans-serif; margin:0; min-height:100vh; background:linear-gradient(180deg,var(--bg),#071029); color:var(--text); display:flex; align-items:center; justify-content:center; padding:32px}
+    .wrap{width:100%; max-width:980px}
+    h1{font-size:20px; margin:0 0 18px; text-align:center}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:14px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.6); position:relative; overflow:visible}
+    .sentence{position:relative; padding:10px 12px; margin:8px 0; border-radius:8px; cursor:pointer; transition:transform .18s cubic-bezier(.2,.9,.3,1), box-shadow .18s; display:block}
+    .sentence:hover, .sentence.active{transform:translateY(-6px) scale(1.06); box-shadow:0 10px 26px rgba(2,6,23,0.6)}
+    .bn{font-size:16px; line-height:1.4}
+    .en{position:absolute; left:50%; transform:translateX(-50%) translateY(-100%); bottom:100%; white-space:nowrap; background:var(--card); padding:8px 10px; border-radius:8px; box-shadow:0 8px 20px rgba(2,6,23,0.6); font-size:13px; color:var(--text); opacity:0; pointer-events:none; transition:opacity .18s, transform .18s}
+    .sentence:hover .en, .sentence.active .en{opacity:1; transform:translateX(-50%) translateY(-110%)}
+    .note{font-size:13px; opacity:.75; margin-top:10px; text-align:center}
+    /* Mobile: allow tap to toggle */
+    @media (hover:none){
+      .sentence{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>রনি — বাংলা বাক্য (hover বা tap করে ইংরেজি দেখুন)</h1>
+
+    <div class="grid" id="list">
+      <!-- Each .sentence has a .bn element (Bengali) and an .en element (English translation) -->
+
+      <div class="card">
+        <div class="sentence" data-en="My name is Roni.">
+          <div class="bn">আমার নাম রনি।</div>
+          <div class="en">My name is Roni.</div>
+        </div>
+        <div class="sentence" data-en="I am a student.">
+          <div class="bn">আমি একজন ছাত্র।</div>
+          <div class="en">I am a student.</div>
+        </div>
+        <div class="sentence" data-en="I am happy.">
+          <div class="bn">আমি খুশি।</div>
+          <div class="en">I am happy.</div>
+        </div>
+        <div class="sentence" data-en="I am tall.">
+          <div class="bn">আমি লম্বা।</div>
+          <div class="en">I am tall.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="I eat rice every day.">
+          <div class="bn">আমি প্রতিদিন ভাত খাই।</div>
+          <div class="en">I eat rice every day.</div>
+        </div>
+        <div class="sentence" data-en="I play football.">
+          <div class="bn">আমি ফুটবল খেলি।</div>
+          <div class="en">I play football.</div>
+        </div>
+        <div class="sentence" data-en="I read books.">
+          <div class="bn">আমি বই পড়ি।</div>
+          <div class="en">I read books.</div>
+        </div>
+        <div class="sentence" data-en="I wake up in the morning.">
+          <div class="bn">আমি সকালে উঠি।</div>
+          <div class="en">I wake up in the morning.</div>
+        </div>
+        <div class="sentence" data-en="I go to school.">
+          <div class="bn">আমি স্কুলে যাই।</div>
+          <div class="en">I go to school.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="Now I am eating rice.">
+          <div class="bn">এখন আমি ভাত খাচ্ছি।</div>
+          <div class="en">Now I am eating rice.</div>
+        </div>
+        <div class="sentence" data-en="I am writing.">
+          <div class="bn">আমি লিখছি।</div>
+          <div class="en">I am writing.</div>
+        </div>
+        <div class="sentence" data-en="I am watching TV.">
+          <div class="bn">আমি টিভি দেখছি।</div>
+          <div class="en">I am watching TV.</div>
+        </div>
+        <div class="sentence" data-en="I am playing.">
+          <div class="bn">আমি খেলছি।</div>
+          <div class="en">I am playing.</div>
+        </div>
+        <div class="sentence" data-en="I am standing.">
+          <div class="bn">আমি দাঁড়িয়ে আছি।</div>
+          <div class="en">I am standing.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="I have eaten rice.">
+          <div class="bn">আমি ভাত খেয়েছি।</div>
+          <div class="en">I have eaten rice.</div>
+        </div>
+        <div class="sentence" data-en="I played football.">
+          <div class="bn">আমি ফুটবল খেলেছি।</div>
+          <div class="en">I played football.</div>
+        </div>
+        <div class="sentence" data-en="I went to school.">
+          <div class="bn">আমি স্কুলে গিয়েছিলাম।</div>
+          <div class="en">I went to school.</div>
+        </div>
+        <div class="sentence" data-en="I sang a song.">
+          <div class="bn">আমি গান গেয়েছি।</div>
+          <div class="en">I sang a song.</div>
+        </div>
+        <div class="sentence" data-en="I slept.">
+          <div class="bn">আমি ঘুমিয়েছিলাম।</div>
+          <div class="en">I slept.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="I have a bag.">
+          <div class="bn">আমার একটি ব্যাগ আছে।</div>
+          <div class="en">I have a bag.</div>
+        </div>
+        <div class="sentence" data-en="I have a phone.">
+          <div class="bn">আমার একটি ফোন আছে।</div>
+          <div class="en">I have a phone.</div>
+        </div>
+        <div class="sentence" data-en="I have a book.">
+          <div class="bn">আমার একটি বই আছে।</div>
+          <div class="en">I have a book.</div>
+        </div>
+        <div class="sentence" data-en="I have a car.">
+          <div class="bn">আমার একটি গাড়ি আছে।</div>
+          <div class="en">I have a car.</div>
+        </div>
+        <div class="sentence" data-en="I have two friends.">
+          <div class="bn">আমার দুটি বন্ধু আছে।</div>
+          <div class="en">I have two friends.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="Today I must study.">
+          <div class="bn">আজ আমাকে পড়তে হবে।</div>
+          <div class="en">Today I must study.</div>
+        </div>
+        <div class="sentence" data-en="I have to go to school.">
+          <div class="bn">আমাকে স্কুলে যেতে হবে।</div>
+          <div class="en">I have to go to school.</div>
+        </div>
+        <div class="sentence" data-en="I have to cook food.">
+          <div class="bn">আমাকে খাবার রান্না করতে হবে।</div>
+          <div class="en">I have to cook food.</div>
+        </div>
+        <div class="sentence" data-en="I have to clean the house.">
+          <div class="bn">আমাকে ঘর পরিষ্কার করতে হবে।</div>
+          <div class="en">I have to clean the house.</div>
+        </div>
+        <div class="sentence" data-en="I have to sleep now.">
+          <div class="bn">আমাকে এখন ঘুমাতে হবে।</div>
+          <div class="en">I have to sleep now.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="I want water.">
+          <div class="bn">আমি পানি চাই।</div>
+          <div class="en">I want water.</div>
+        </div>
+        <div class="sentence" data-en="I want a pen.">
+          <div class="bn">আমি একটি কলম চাই।</div>
+          <div class="en">I want a pen.</div>
+        </div>
+        <div class="sentence" data-en="I want a new phone.">
+          <div class="bn">আমি একটি নতুন ফোন চাই।</div>
+          <div class="en">I want a new phone.</div>
+        </div>
+        <div class="sentence" data-en="I want a car.">
+          <div class="bn">আমি একটি গাড়ি চাই।</div>
+          <div class="en">I want a car.</div>
+        </div>
+        <div class="sentence" data-en="I want a book.">
+          <div class="bn">আমি একটি বই চাই।</div>
+          <div class="en">I want a book.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="I want to learn English.">
+          <div class="bn">আমি ইংরেজি শিখতে চাই।</div>
+          <div class="en">I want to learn English.</div>
+        </div>
+        <div class="sentence" data-en="I want to travel.">
+          <div class="bn">আমি ভ্রমণ করতে চাই।</div>
+          <div class="en">I want to travel.</div>
+        </div>
+        <div class="sentence" data-en="I want to sing.">
+          <div class="bn">আমি গান গাইতে চাই।</div>
+          <div class="en">I want to sing.</div>
+        </div>
+        <div class="sentence" data-en="I want to eat.">
+          <div class="bn">আমি খেতে চাই।</div>
+          <div class="en">I want to eat.</div>
+        </div>
+        <div class="sentence" data-en="I want to play.">
+          <div class="bn">আমি খেলতে চাই।</div>
+          <div class="en">I want to play.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="I should study.">
+          <div class="bn">আমার পড়াশোনা করা উচিত।</div>
+          <div class="en">I should study.</div>
+        </div>
+        <div class="sentence" data-en="I should visit the doctor.">
+          <div class="bn">আমার ডাক্তারের কাছে যাওয়া উচিত।</div>
+          <div class="en">I should visit the doctor.</div>
+        </div>
+        <div class="sentence" data-en="I should take my medicine.">
+          <div class="bn">আমার ওষুধ খাওয়া উচিত।</div>
+          <div class="en">I should take my medicine.</div>
+        </div>
+        <div class="sentence" data-en="I should rest now.">
+          <div class="bn">আমার এখন বিশ্রাম নেওয়া উচিত।</div>
+          <div class="en">I should rest now.</div>
+        </div>
+        <div class="sentence" data-en="I should wake up early in the morning.">
+          <div class="bn">আমার সকাল সকাল ঘুম থেকে ওঠা উচিত।</div>
+          <div class="en">I should wake up early in the morning.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="I can swim.">
+          <div class="bn">আমি সাঁতার কাটতে পারি।</div>
+          <div class="en">I can swim.</div>
+        </div>
+        <div class="sentence" data-en="I can write.">
+          <div class="bn">আমি লিখতে পারি।</div>
+          <div class="en">I can write.</div>
+        </div>
+        <div class="sentence" data-en="I can sing.">
+          <div class="bn">আমি গান গাইতে পারি।</div>
+          <div class="en">I can sing.</div>
+        </div>
+        <div class="sentence" data-en="I can run.">
+          <div class="bn">আমি দৌড়াতে পারি।</div>
+          <div class="en">I can run.</div>
+        </div>
+        <div class="sentence" data-en="I can cook.">
+          <div class="bn">আমি রান্না করতে পারি।</div>
+          <div class="en">I can cook.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="sentence" data-en="I will go to school tomorrow.">
+          <div class="bn">আমি আগামীকাল স্কুলে যাব।</div>
+          <div class="en">I will go to school tomorrow.</div>
+        </div>
+        <div class="sentence" data-en="I will buy a new book.">
+          <div class="bn">আমি নতুন বই কিনব।</div>
+          <div class="en">I will buy a new book.</div>
+        </div>
+        <div class="sentence" data-en="I will study.">
+          <div class="bn">আমি পড়ব।</div>
+          <div class="en">I will study.</div>
+        </div>
+        <div class="sentence" data-en="I will meet my friend.">
+          <div class="bn">আমি বন্ধুর সাথে দেখা করব।</div>
+          <div class="en">I will meet my friend.</div>
+        </div>
+        <div class="sentence" data-en="I will play.">
+          <div class="bn">আমি খেলব।</div>
+          <div class="en">I will play.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note">মোবাইলে: ট্যাপ করলে ইংরেজি দেখাবে। ডেস্কটপে: মাউস hover করে দেখুন।</div>
+  </div>
+
+  <script>
+    // Enable tap-to-toggle for touch devices
+    (function(){
+      const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints>0;
+      if(!isTouch) return;
+      document.querySelectorAll('.sentence').forEach(el=>{
+        el.addEventListener('click', e=>{
+          // toggle active class; remove from others
+          const was = el.classList.contains('active');
+          document.querySelectorAll('.sentence.active').forEach(a=>a.classList.remove('active'));
+          if(!was) el.classList.add('active');
+        });
+      });
+      // Hide active when tapping outside
+      document.addEventListener('click', e=>{
+        if(!e.target.closest('.sentence')){
+          document.querySelectorAll('.sentence.active').forEach(a=>a.classList.remove('active'));
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
